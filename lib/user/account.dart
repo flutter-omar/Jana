@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:janaapp/generated/i18n.dart';
 
 import 'package:janaapp/user/bankaccount.dart';
 import 'package:janaapp/widget/login_animation.dart';
@@ -51,7 +52,7 @@ class _AccountInfoState extends State<AccountInfo>
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "معلومات الحساب",
+           S.of(context).translate("AccountInformation") ,
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
@@ -88,8 +89,8 @@ class _AccountInfoState extends State<AccountInfo>
 
                             validator: (val) {
                               return val.isEmpty
-                                  ? "الرجاء أدخال البريد الالكتروني"
-                                  :Validator.validateEmail(val);
+                                  ? S.of(context).translate("enteremail")
+                                  :Validator.validateEmail(val,context);
                             },
                             controller: _usernameController,
                             keyboardType: TextInputType.emailAddress,
@@ -101,7 +102,7 @@ focusColor: Color(0xff78c891),
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
-                              labelText: "البريد الالكتروني",
+                              labelText: S.of(context).translate("emailAddress"),
                               prefixIcon: Icon(Icons.email, color: _iconColor,),
                             ),
                           )),
@@ -121,9 +122,9 @@ focusColor: Color(0xff78c891),
                             controller: _passwordController,
                             validator: (val) {
                               return val.isEmpty
-                                  ? "الرجاء أدخال كلمة السر"
+                                  ? S.of(context).translate("enterpassword")
                                   : val.length<6?
-                                  "كلمة السر لاتقل عن 6 احرف"
+                              S.of(context).translate("passwordlength")
                               :null;
                             },
                             cursorColor: Color(0xff78c891),
@@ -134,7 +135,7 @@ focusColor: Color(0xff78c891),
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
-                              labelText: "كلمة المرور",
+                              labelText: S.of(context).translate("password"),
                               prefixIcon: Icon(
                                 Icons.lock_outline, color: _iconColor,),
                             ),
@@ -161,7 +162,7 @@ focusColor: Color(0xff78c891),
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
                               disabledBorder: InputBorder.none,
-                              labelText: "المملكة العربية السعودية",
+                              labelText: S.of(context).translate("soudia"),
                               prefixIcon: Icon(
                                 Icons.language, color: Colors.grey,),
                             ),
@@ -180,7 +181,7 @@ focusColor: Color(0xff78c891),
                         )),
                     SizedBox(height: 20.0),
                     StaggerAnimation(
-                      titleButton: "التالي",
+                      titleButton: S.of(context).translate("next"),
                       buttonController: _loginButtonController.view,
                       onTap: () {
 //                      Provider.of<UserModel>(context, listen: false).updateUser({"email":username,"password":password,"city":city});
@@ -258,7 +259,7 @@ focusColor: Color(0xff78c891),
       items: items,
       validator: (val){
         if(val==null){
-          return "ألرجاء اختيار المدينة";
+          return S.of(context).translate("entercity");
         }else{
           return null;
         }
@@ -272,7 +273,7 @@ focusColor: Color(0xff78c891),
       },
       isExpanded: true,
       itemHeight: 50,
-      hint: Text("المدينة"),
+      hint: Text(S.of(context).translate("city")),
     );
   }
 
@@ -291,11 +292,11 @@ focusColor: Color(0xff78c891),
   }
 }
 class Validator {
-  static String validateEmail(String value) {
+  static String validateEmail(String value,BuildContext context) {
     try {
       Validate.isEmail(value);
     } catch (e) {
-      return 'الرجاء ادخال بريد إلكتروني صالح';
+      return S.of(context).translate("validemail");
     }
 
     return null;

@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/tabbar.dart';
 import 'package:janaapp/widget/login_animation.dart';
 
@@ -82,14 +83,14 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                 children: <Widget>[
                   new ListTile(
                       leading: new Icon(Icons.photo_library),
-                      title: new Text('مكتبة الصور'),
+                      title: new Text(S.of(context).translate("PhotoGallery")),
                       onTap: () {
                         _imgFromGallery(image);
                         Navigator.of(context).pop();
                       }),
                   new ListTile(
                     leading: new Icon(Icons.photo_camera),
-                    title: new Text('الكاميرا'),
+                    title: new Text(S.of(context).translate("Camira")),
                     onTap: () {
                       _imgFromCamera(image);
                       Navigator.of(context).pop();
@@ -127,7 +128,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "معلومات المركبة",
+            S.of(context).translate("Vehicleinformation"),
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
@@ -172,7 +173,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 enabledBorder: InputBorder.none,
                                 errorBorder: InputBorder.none,
                                 disabledBorder: InputBorder.none,
-                                labelText: "المركبة",
+                                labelText: S.of(context).translate("Vehicle"),
                                 prefixIcon: Icon(
                                   Icons.directions_car,
                                   color: _iconColor,
@@ -227,7 +228,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 enabledBorder: InputBorder.none,
                                 errorBorder: InputBorder.none,
                                 disabledBorder: InputBorder.none,
-                                hintText: "رقم اللوحة",
+                                hintText: S.of(context).translate("PlateNumber"),
                                 prefixIcon: Icon(
                                   Icons.featured_play_list,
                                   color: _iconColor,
@@ -323,7 +324,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                       cursorColor: Color(0xff78c891),
                                       validator: (val) {
                                         return val.isEmpty
-                                            ? "الرجاء أدخال الأرقام"
+                                            ? S.of(context).translate("enterPlateNumber")
                                             : null;
                                       },
                                       keyboardType: TextInputType.number,
@@ -334,7 +335,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                         enabledBorder: InputBorder.none,
                                         errorBorder: InputBorder.none,
                                         disabledBorder: InputBorder.none,
-                                        labelText: "أرقام اللوحة",
+                                        labelText: S.of(context).translate("enNumber"),
                                       ),
                                     ),
                                   ),
@@ -355,10 +356,8 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                       onChanged: (value) => enString = value,
                                       validator: (val) {
                                         return val.isEmpty
-                                            ? "الرجاء أدخال الاحرف"
-                                            : val.length < 3
-                                                ? "العدد لايقل عن 3"
-                                                : null;
+                                            ? S.of(context).translate("enterPlateString")
+                                            :  null;
                                       },
                                       controller: _enStringController,
                                       cursorColor: Color(0xff78c891),
@@ -368,7 +367,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                         enabledBorder: InputBorder.none,
                                         errorBorder: InputBorder.none,
                                         disabledBorder: InputBorder.none,
-                                        labelText: "إحرف إنكليزية",
+                                        labelText: S.of(context).translate("enString"),
                                       ),
                                     ),
                                   ),
@@ -397,8 +396,8 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 disabledBorder: InputBorder.none,
                                 focusColor: Color(0xff78c891),
                                 hintText: _carImage
-                                    ? "صورة السيارة من الامام"
-                                    : "الرجاء إدخال صورة السيارة من الأمام",
+                                    ? S.of(context).translate("VehiclePhoto")
+                                    : S.of(context).translate("entervehiclephoto"),
                                 prefixIcon: Icon(
                                   Icons.image,
                                   color: _iconColor,
@@ -458,8 +457,8 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 disabledBorder: InputBorder.none,
                                 focusColor: Color(0xff78c891),
                                 hintText: _carCardImage
-                                    ? "صورة الأستمارة"
-                                    : "الرجاء ادخال صورة الاستمارة",
+                                    ? S.of(context).translate("formphoto")
+                                    : S.of(context).translate("enterformphoto"),
                                 prefixIcon: Icon(
                                   Icons.image,
                                   color: _iconColor,
@@ -519,8 +518,8 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 disabledBorder: InputBorder.none,
                                 focusColor: Color(0xff78c891),
                                 hintText: _carLicenseImage
-                                    ? "صورة الرخصة"
-                                    : "الرجاء ادخال صورة الرخصة",
+                                    ? S.of(context).translate("licensephoto")
+                                    : S.of(context).translate("enterlicense"),
                                 prefixIcon: Icon(
                                   Icons.image,
                                   color: _iconColor,
@@ -564,7 +563,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                   SizedBox(height: 20.0),
                   StaggerAnimation(
                     titleButton:
-                        !widget.newUser ? "أرسل طلب التسجيل" : "نعديل البيانات",
+                        !widget.newUser ? S.of(context).translate("registrationrequest") : S.of(context).translate("Datamodification"),
                     buttonController: _loginButtonController.view,
                     onTap: () {
                       if (_formKey.currentState.validate()) {
@@ -621,7 +620,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
           title: Icon(
             Icons.check_circle,
             color: Colors.white,
-            size: 20,
+            size: 30,
           ),
           backgroundColor: Color(0xffAcD053),
           content: SingleChildScrollView(
@@ -629,13 +628,13 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
               children: <Widget>[
                 Center(
                   child: Text(
-                    'تم إرسال طلبك بنجاح',
+                    S.of(context).translate("successfullyrequest"),
                     style: TextStyle(fontSize: 18, color: Colors.white),
                   ),
                 ),
                 Center(
                   child: Text(
-                    'سيتم التواصل معك قريبا',
+                    S.of(context).translate("contactedsoon"),
                     style: TextStyle(fontSize: 14, color: Colors.white),
                   ),
                 ),
@@ -660,7 +659,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                               BorderRadius.all(const Radius.circular(25.0)),
                           border: Border.all(color: Colors.white)),
                       child: Text(
-                        "إغلاق",
+                        S.of(context).translate("close"),
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 16.0,
@@ -702,7 +701,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
               errorBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
               labelText: element,
-              hintText: "طراز المركبة"),
+              ),
         ),
       );
     }).toList();
@@ -714,7 +713,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
       value: _typeCar,
       validator: (val) {
         if (val == null) {
-          return "ألرجاء اختيار طراز المركبة";
+          return S.of(context).translate("enterVehiclemodel");
         } else {
           return null;
         }
@@ -727,7 +726,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
       },
       isExpanded: true,
       itemHeight: 50,
-      hint: Text("طراز المركبة"),
+      hint: Text(S.of(context).translate("Vehiclemodel")),
     );
   }
 
@@ -770,7 +769,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
               errorBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
               labelText: element,
-              hintText: "سنة الصنع"),
+          ),
         ),
       );
     }).toList();
@@ -782,7 +781,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
       value: _carDate,
       validator: (val) {
         if (val == null) {
-          return "ألرجاء اختيار سنة الصنع";
+          return S.of(context).translate("entermanufacturingyear");
         } else {
           return null;
         }
@@ -795,7 +794,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
       },
       isExpanded: true,
       itemHeight: 50,
-      hint: Text("سنة الصنع"),
+      hint: Text(S.of(context).translate("manufacturingyear")),
     );
   }
 
@@ -823,8 +822,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
               enabledBorder: InputBorder.none,
               errorBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
-              labelText: element,
-              hintText: "ماركة المركبة"),
+              labelText: element,),
         ),
       );
     }).toList();
@@ -836,7 +834,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
       value: _factoryCAr,
       validator: (val) {
         if (val == null) {
-          return "ألرجاء اختيار ماركة المركبة";
+          return S.of(context).translate("enterVehiclebrand");
         } else {
           return null;
         }
@@ -849,7 +847,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
       },
       isExpanded: true,
       itemHeight: 50,
-      hint: Text("ماركة المركبة"),
+      hint: Text(S.of(context).translate("Vehiclebrand")),
     );
   }
 }

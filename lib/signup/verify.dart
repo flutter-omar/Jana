@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/user/profile.dart';
 import 'package:janaapp/widget/login_animation.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
@@ -25,7 +26,7 @@ class _VerifyState extends State<Verify> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "تأكيد رقم الجوال",
+          S.of(context).translate("confirmphone"),
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,
@@ -54,7 +55,7 @@ class _VerifyState extends State<Verify> with TickerProviderStateMixin {
                   color: Colors.green.shade200,
                   child: Center(
                       child: Text(
-                    "رمز التحقق",
+                    S.of(context).translate("Verificationcode"),
                     style: TextStyle(color: Colors.black, fontSize: 20),
                   )),
                 ),
@@ -94,7 +95,7 @@ class _VerifyState extends State<Verify> with TickerProviderStateMixin {
                 height: 50.0,
               ),
               StaggerAnimation(
-                titleButton: "تأكيد",
+                titleButton: S.of(context).translate("Confirm"),
                 buttonController: _loginButtonController.view,
                 onTap: () {
                   Navigator.push(
@@ -106,13 +107,13 @@ class _VerifyState extends State<Verify> with TickerProviderStateMixin {
               SizedBox(
                 height: 40.0,
               ),
-              Center(child: Text("لم تستلم رمز تحقق!")),
+              Center(child: Text(S.of(context).translate("codemessage"))),
               SizedBox(
                 height: 10.0,
               ),
               GestureDetector(
                 child: Text(
-                  "إعادة إرسال رمز التحقق",
+                  S.of(context).translate("resendcode"),
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                       color: Colors.black,

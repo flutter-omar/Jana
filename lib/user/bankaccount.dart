@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/widget/login_animation.dart';
 
 import 'vehicle.dart';
@@ -43,7 +44,7 @@ class _BankAccountState extends State<BankAccount>
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            " معلومات الحساب البنكي",
+            S.of(context).translate("bankAccount"),
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
@@ -81,14 +82,14 @@ class _BankAccountState extends State<BankAccount>
                         onChanged: (value) => name = value,
                         validator: (val) {
                           return val.isEmpty
-                              ? "الرجاء إدخال الأسم الثلاثي"
+                              ?  S.of(context).translate("enterfullname")
                               : null;
                         },
                         controller: _nameController,
                         cursorColor: Color(0xff78c891),
                         decoration: InputDecoration(
                           focusColor: Color(0xff78c891),
-                          labelText: "الاسم الثلاثي",
+                          labelText: S.of(context).translate("fullname"),
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
@@ -123,12 +124,12 @@ class _BankAccountState extends State<BankAccount>
                         keyboardType: TextInputType.number,
                         controller: _accountnumController,
                         validator: (val) {
-                          return val.isEmpty ? "الرجاء إدخال رقم الحساب" : null;
+                          return val.isEmpty ?  S.of(context).translate("chooseiban") : null;
                         },
                         cursorColor: Color(0xff78c891),
                         decoration: InputDecoration(
                           focusColor: Color(0xff78c891),
-                          labelText: "رقم الأيبان İBAN",
+                          labelText:  S.of(context).translate("iban"),
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
@@ -142,7 +143,7 @@ class _BankAccountState extends State<BankAccount>
                     ),
                     SizedBox(height: 20.0),
                     StaggerAnimation(
-                      titleButton: "التالي",
+                      titleButton: S.of(context).translate("next"),
                       buttonController: _loginButtonController.view,
                       onTap: () {
                         // Provider.of<UserModel>(context, listen: false).updateUser({"bank_name":bank,"bank_number":accountnum,"name":name});
@@ -207,7 +208,7 @@ class _BankAccountState extends State<BankAccount>
       value: _value,
       validator: (val){
         if(val==null){
-          return "ألرجاء تحديد البنك";
+          return  S.of(context).translate("selectbank");
         }else{
           return null;
         }
@@ -220,7 +221,7 @@ class _BankAccountState extends State<BankAccount>
       },
       isExpanded: true,
       itemHeight: 50,
-      hint: Text("حدد البنك"),
+      hint: Text( S.of(context).translate("bank")),
     );
   }
 }

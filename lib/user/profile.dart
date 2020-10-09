@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/widget/login_animation.dart';
 
 import 'account.dart';
@@ -71,14 +72,14 @@ class _UserProfileState extends State<UserProfile>
                 children: <Widget>[
                   new ListTile(
                       leading: new Icon(Icons.photo_library),
-                      title: new Text('مكتبة الصور'),
+                      title: new Text(S.of(context).translate("PhotoGallery")),
                       onTap: () {
                         _imgFromGallery(image);
                         Navigator.of(context).pop();
                       }),
                   new ListTile(
                     leading: new Icon(Icons.photo_camera),
-                    title: new Text('الكاميرا'),
+                    title: new Text(S.of(context).translate("Camira")),
                     onTap: () {
                       _imgFromCamera(image);
                       Navigator.of(context).pop();
@@ -113,7 +114,7 @@ class _UserProfileState extends State<UserProfile>
     return Scaffold(
         appBar: AppBar(
           title: Text(
-            "المعلومات الشخصية",
+            S.of(context).translate("personalinformation"),
             style: TextStyle(color: Colors.black),
           ),
           backgroundColor: Colors.white,
@@ -186,7 +187,7 @@ class _UserProfileState extends State<UserProfile>
                       ),
                     ),
                     SizedBox(height: 12.0),
-                    Text(checkimage?"الصورة الشخصية":"ألرجاء اختيار الصورة الشخصية"),
+                    Text(checkimage?S.of(context).translate("personalphoto"):S.of(context).translate("choosepersonalphoto")),
                     SizedBox(height: 12.0),
                     Container(
                       decoration: BoxDecoration(
@@ -200,13 +201,13 @@ class _UserProfileState extends State<UserProfile>
                         controller: _nameController,
                         validator: (val) {
                           return val.isEmpty
-                              ? "الرجاء إدخال الأسم الثلاثي"
+                              ? S.of(context).translate("enterfullname")
                               : null;
                         },
                         cursorColor: Color(0xff78c891),
                         decoration: InputDecoration(
                           focusColor: Color(0xff78c891),
-                          labelText: "الاسم الثلاثي",
+                          labelText: S.of(context).translate("fullname"),
                           focusedBorder: InputBorder.none,
                           enabledBorder: InputBorder.none,
                           errorBorder: InputBorder.none,
@@ -262,14 +263,14 @@ class _UserProfileState extends State<UserProfile>
                                 ? DateFormat("yyyy/MM/dd").format(
                                     DateTime.parse(birthDate.toIso8601String()),
                                   )
-                                : "الرجاء اختيار تاريخ الميلاد",
+                                : S.of(context).translate("choosebirthDate"),
                           ),
                           style: TextStyle(
                               color: _birthDate ? Colors.black : Colors.red),
                           cursorColor: Color(0xff78c891),
                           decoration: InputDecoration(
                             focusColor: Color(0xff78c891),
-                            labelText: "تاريخ الميلاد",
+                            labelText: S.of(context).translate("birthDate"),
                             focusedBorder: InputBorder.none,
                             enabledBorder: InputBorder.none,
                             errorBorder: InputBorder.none,
@@ -298,11 +299,11 @@ class _UserProfileState extends State<UserProfile>
                             controller: _identityController,
                             keyboardType: TextInputType.number,
                             validator: (val) {
-                              return val.isEmpty ? "الرجاء إدخال رقم الهوية" : null;
+                              return val.isEmpty ? S.of(context).translate("enterId") : null;
                             },
                             decoration: InputDecoration(
                               focusColor: Color(0xff78c891),
-                              labelText: "الهوية",
+                              labelText: S.of(context).translate("id"),
                               focusedBorder: InputBorder.none,
                               enabledBorder: InputBorder.none,
                               errorBorder: InputBorder.none,
@@ -336,7 +337,7 @@ class _UserProfileState extends State<UserProfile>
                               ),
                               Flexible(
                                   child: Text(
-                                ckeckIdentityImage?"صورة الهوية":"الرجاء تحميل صورة الهوية",
+                                ckeckIdentityImage?S.of(context).translate("idphoto"):S.of(context).translate("uploadidphoto"),
                               )),
                             ],
                           ),
@@ -377,7 +378,7 @@ class _UserProfileState extends State<UserProfile>
                     ),
                     SizedBox(height: 20.0),
                     StaggerAnimation(
-                      titleButton: "التالي",
+                      titleButton: S.of(context).translate("next"),
                       buttonController: _loginButtonController.view,
                       onTap: () {
 //                      Provider.of<UserModel>(context, listen: false).updateUser({"name":name,"picture":picture,"birthdate":birthDate,"identity_number":identity});

@@ -1,5 +1,6 @@
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/model/user.dart';
 import 'package:janaapp/widget/login_animation.dart';
 
@@ -56,7 +57,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("تسجيل كابتن جديد",style: TextStyle(color: Colors.black),),
+        title: Text(S.of(context).translate("newCaptain"),style: TextStyle(color: Colors.black),),
         backgroundColor: Colors.white,
         leading:  IconButton(
           icon:Icon( Icons.arrow_back_ios,
@@ -88,7 +89,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                             padding: const EdgeInsets.all(8.0),
                             child: Container(
                               color: Colors.green.shade200,
-                              child: Center(child: Text("سجل رقم جوال",style: TextStyle(color: Colors.black,fontSize: 20),)),
+                              child: Center(child: Text(S.of(context).translate("Register"),style: TextStyle(color: Colors.black,fontSize: 20),)),
                             ),
                           ),
                           const SizedBox(height: 60.0),
@@ -114,7 +115,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                                         enabledBorder: InputBorder.none,
                                         errorBorder: InputBorder.none,
                                         disabledBorder: InputBorder.none,
-                                        labelText: "رقم جوالك"),
+                                        labelText: S.of(context).translate("phoneNumber")),
                                     keyboardType: TextInputType.phone,
                                     controller: _controller,
                                   ),
@@ -144,7 +145,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
                             height: 60.0,
                           ),
                           StaggerAnimation(
-                            titleButton: "تأكيد",
+                            titleButton: S.of(context).translate("Confirm"),
                             buttonController: _loginButtonController.view,
                             onTap: () {
 

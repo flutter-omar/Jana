@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/model/user.dart';
 import 'package:janaapp/tabbar.dart';
 import 'package:janaapp/widget/login_animation.dart';
@@ -120,7 +121,7 @@ class _LoginPageState extends State<LoginScreen> with TickerProviderStateMixin {
                                         enabledBorder: InputBorder.none,
                                         errorBorder: InputBorder.none,
                                         disabledBorder: InputBorder.none,
-                                        labelText: "البريد الالكتروني",
+                                        labelText: S.of(context).translate("emailAddress"),
                                         prefixIcon: Icon(
                                           Icons.alternate_email,
                                           color: Color(0xff78c891),
@@ -150,7 +151,7 @@ class _LoginPageState extends State<LoginScreen> with TickerProviderStateMixin {
                                   enabledBorder: InputBorder.none,
                                   errorBorder: InputBorder.none,
                                   disabledBorder: InputBorder.none,
-                                  labelText: "كلمة السر",
+                                  labelText:S.of(context).translate("password"),
                                   prefixIcon: Icon(
                                     Icons.lock_outline,
                                     color: Color(0xff78c891),
@@ -163,7 +164,7 @@ class _LoginPageState extends State<LoginScreen> with TickerProviderStateMixin {
                           SizedBox(height: 5.0),
                           GestureDetector(
                             child: Text(
-                              "نسيت كلمة السر؟",
+                              S.of(context).translate("forgetPassword"),
                               style: TextStyle(
                                   decoration: TextDecoration.underline,
                                   color: Colors.black, fontWeight: FontWeight.bold),
@@ -178,7 +179,7 @@ class _LoginPageState extends State<LoginScreen> with TickerProviderStateMixin {
                           ),
 
                           StaggerAnimation(
-                            titleButton: "تسجيل الدخول",
+                            titleButton: S.of(context).translate("login"),
                             buttonController: _loginButtonController.view,
                             onTap: () {
                               if (!isLoading) {
@@ -227,7 +228,7 @@ class _LoginPageState extends State<LoginScreen> with TickerProviderStateMixin {
                   allColors[3]
                 ]),),
             child: Center(child: Text(
-              "تسجيل كابتن جديد",style: TextStyle(color: Colors.white),
+              S.of(context).translate("newCaptain"),style: TextStyle(color: Colors.white),
             )),
 
         ),
