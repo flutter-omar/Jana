@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 class OrderDetail extends StatefulWidget {
@@ -39,7 +40,7 @@ bool payment=false;
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
 
-                    Text("اسم المتجر:"),
+                    Text(S.of(context).translate("market")),
                     Icon(
                       Icons.person_outline,
                       color: Colors.greenAccent,
@@ -56,7 +57,7 @@ bool payment=false;
                   child: Column(children: <Widget>[
                     ListTile(
                       onTap: () => {},
-                      title: Text("رقم المتجر", style: TextStyle(fontSize: 16)),
+                      title: Text(S.of(context).translate("marketnum"), style: TextStyle(fontSize: 16)),
                       trailing: Container(
                         decoration: BoxDecoration(
                           color: Color(0xffBBD242),
@@ -82,7 +83,7 @@ bool payment=false;
                   child: Column(children: <Widget>[
                     ListTile(
                       onTap: () => {},
-                      title: Text("موقع المتجر", style: TextStyle(fontSize: 16)),
+                      title: Text(S.of(context).translate("marketlocation"), style: TextStyle(fontSize: 16)),
                       trailing: Container(
                         decoration: BoxDecoration(
                           color: Color(0xffBBD242),
@@ -110,28 +111,28 @@ bool payment=false;
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[Text("رقم الطلب"), Text("1")],
+                  children: <Widget>[Text(S.of(context).translate("ordernum")), Text("1")],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[Text("قيمة الطلب"), Text("1")],
+                  children: <Widget>[Text(S.of(context).translate("orderCost")), Text("1")],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[Text("قيمة التوصيل"), Text("1")],
+                  children: <Widget>[Text(S.of(context).translate("Delivery")), Text("1")],
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[Text("طريقة التوصيل"), Text("1")],
+                  children: <Widget>[Text(S.of(context).translate("deliverystatus")), Text("1")],
                 ),
               ),
               SizedBox(
@@ -147,7 +148,7 @@ bool payment=false;
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text("اسم العمل:"),
+                      Text("${S.of(context).translate("customername")} :"),
                       Icon(
                         Icons.person,
                         color: Colors.black,
@@ -165,7 +166,7 @@ bool payment=false;
                     child: Column(children: <Widget>[
                       ListTile(
                         onTap: () => {},
-                        title: Text("رقم العميل", style: TextStyle(fontSize: 16)),
+                        title: Text(S.of(context).translate("customernum"), style: TextStyle(fontSize: 16)),
                         trailing: Container(
                           decoration: BoxDecoration(
                             color: Color(0xffBBD242),
@@ -191,7 +192,7 @@ bool payment=false;
                     child: Column(children: <Widget>[
                       ListTile(
                         onTap: () => {},
-                        title: Text("موقع العميل", style: TextStyle(fontSize: 16)),
+                        title: Text(S.of(context).translate("customerlocation"), style: TextStyle(fontSize: 16)),
                         trailing: Container(
                           decoration: BoxDecoration(
                               color: Color(0xffBBD242),
@@ -218,7 +219,7 @@ bool payment=false;
                       activeColor: Colors.green.shade200,
                     ),
                     SizedBox(width: 20,),
-                    Text("تم استلام المبلغ")
+                    Text(S.of(context).translate("Payment"))
                   ],
                 ),
                 SizedBox(height: 10.0),
@@ -230,7 +231,7 @@ bool payment=false;
                     color: Colors.green.shade200,
                     child: Center(
                         child: Text(
-                          "رمز التحقق",
+                          S.of(context).translate("Verificationcode"),
                           style: TextStyle(color: Colors.black, fontSize: 20),
                         )),
                   ),
@@ -270,13 +271,13 @@ bool payment=false;
                 SizedBox(
                   height: 20.0,
                 ),
-                Center(child: Text("لم تستلم رمز تحقق!")),
+                Center(child: Text(S.of(context).translate("codemessage"))),
                 SizedBox(
                   height: 10.0,
                 ),
                 GestureDetector(
                   child: Text(
-                    "إعادة إرسال رمز التحقق",
+                    S.of(context).translate("resendcode"),
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold,

@@ -88,5 +88,14 @@
   "logout": "Logout",
   "ready": "Ready to receive requests",
   "deliverysum": "Total amount of delivery",
-  "MembershipNo": "Membership No"
+  "MembershipNo": "Membership No",
+  "marketlocation":"Store location",
+  "marketnum": "Store phone",
+  "deliverystatus": "Delivery method",
+  "customername": "Customer name",
+  "customernum": "Customer phone",
+  "customerlocation": "Costomer location",
+  "Payment": "Payment has been received",
+  "storeorder": "Order received from store",
+  "customerorder": "The order delivered"
 }

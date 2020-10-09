@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/widget/login_animation.dart';
 import 'package:janaapp/widget/orderdetail.dart';
 
@@ -20,7 +21,7 @@ class _OrderViewState extends State<OrderView>with TickerProviderStateMixin {
   Widget getState(){
     switch(widget.state){
       case("receipt"): return  StaggerAnimation(
-        titleButton: "تم استلام الطلب من المتجر",
+        titleButton: S.of(context).translate("storeorder"),
         buttonController: _loginButtonController.view,
         color: Colors.green.shade200,
         onTap: () {
@@ -31,7 +32,7 @@ class _OrderViewState extends State<OrderView>with TickerProviderStateMixin {
         },
       );
       case("delivered"):return StaggerAnimation(
-        titleButton: "تم توصيل الطلب",
+        titleButton: S.of(context).translate("customerorder"),
         buttonController: _loginButtonController.view,
         color: Colors.red,
         onTap: () {
@@ -42,7 +43,7 @@ class _OrderViewState extends State<OrderView>with TickerProviderStateMixin {
         },
       );
       case("completed"):return StaggerAnimation(
-        titleButton: "تم توصيل الطلب",
+        titleButton: S.of(context).translate("customerorder"),
         buttonController: _loginButtonController.view,
         color: Colors.green,
         onTap: () {
@@ -54,7 +55,7 @@ class _OrderViewState extends State<OrderView>with TickerProviderStateMixin {
         },
       );
       default: return StaggerAnimation(
-        titleButton: "استلام الطلب",
+        titleButton: S.of(context).translate("RequestAccept"),
         buttonController: _loginButtonController.view,
         color: Colors.green.shade200,
         onTap: () {
@@ -79,7 +80,7 @@ class _OrderViewState extends State<OrderView>with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "تفاصيل الطلب",
+          S.of(context).translate("orderdetails"),
           style: TextStyle(color: Colors.black),
         ),
         backgroundColor: Colors.white,

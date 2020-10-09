@@ -88,5 +88,14 @@
   "Technicalsupport": "الدعم الفني",
   "whatsup": "تواصل معنا عبر الواتساب",
   "logout": "تسجيل الخروج",
-  "MembershipNo": "رقم العضوية"
+  "MembershipNo": "رقم العضوية",
+  "marketnum": "رقم المتجر",
+  "marketlocation": "موقع المتجر",
+  "deliverystatus": "طريقة التوصيل",
+  "customername": "اسم العميل",
+  "customernum": "رقم العميل",
+  "customerlocation": "موقع العميل",
+  "Payment": "تم إستلام المبلغ",
+  "storeorder": "تم استلام الطلب من المتجر",
+  "customerorder": "تم توصيل الطلب"
 }
