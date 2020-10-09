@@ -615,7 +615,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
     return showDialog<void>(
       context: context,
       barrierDismissible: false, // user must tap button!
-      builder: (BuildContext context) {
+      builder: (BuildContext context2) {
         return AlertDialog(
           title: Icon(
             Icons.check_circle,
@@ -645,7 +645,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
             Center(
               child: GestureDetector(
                 onTap: () => Navigator.push(
-                  context,
+                  context2,
                   MaterialPageRoute(builder: (context) => TabBarScreen()),
                 ),
                 child: Center(

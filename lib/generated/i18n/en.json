@@ -64,11 +64,29 @@
   "manufacturingyear": "manufacturing year",
   "entermanufacturingyear": "Please choose manufacturing year",
   "Vehiclebrand": "Vehicle brand",
-  "enterVehiclebrand": "Please choose Vehicle brand"
-
-
-
-
-
-
+  "enterVehiclebrand": "Please choose Vehicle brand",
+  "market": "Store name",
+  "Delivery": "Delivery amount",
+  "orders": "Orders",
+  "orderCost": "Order value",
+  "ordernum": "Order number :",
+  "RequestAccept": "Order Accept",
+  "Rejection": "Rejection Order",
+  "orderdetails": "Order Details",
+  "home": "Home",
+  "status": "Status",
+  "myorder": "My Orders",
+  "personal": "My Personal Page",
+  "earnings": "My earnings",
+  "orderdelivered": "Orders that have been delivered",
+  "ordercancel": "Orders that have been canceled",
+  "accountdetails": "account details",
+  "language": "The language",
+  "changelanguage": "Change the language",
+  "Technicalsupport": "Technical support",
+  "whatsup": "Contact us via WhatsApp",
+  "logout": "Logout",
+  "ready": "Ready to receive requests",
+  "deliverysum": "Total amount of delivery",
+  "MembershipNo": "Membership No"
 }

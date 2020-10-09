@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:janaapp/widget/ordercard.dart';
 
+import 'generated/i18n.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
@@ -12,7 +14,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       backgroundColor: Color(0xE6E6E6E6),
       appBar: AppBar(
-        title: Center(child: Text("الطلبات",style: TextStyle(color: Colors.black),)),
+        title: Center(child: Text(S.of(context).translate("orders"),style: TextStyle(color: Colors.black),)),
         backgroundColor: Colors.white,
       ),
 body: SafeArea(

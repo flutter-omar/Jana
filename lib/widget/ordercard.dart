@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 import 'package:janaapp/order/orderview.dart';
 
 import 'package:janaapp/tabbar.dart';
@@ -33,10 +34,10 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin{
                   padding: const EdgeInsets.all(5.0),
                   child: Column(
                     children: <Widget>[
-                      Text("أسم المتجر: "),
-                      Text("مبلغ التوصيل:"),
-                      Text(" قيمة الطلب:"),
-                      Text("رقم الطلب: "),
+                      Text("${S.of(context).translate("market")} : "),
+                      Text("${S.of(context).translate("Delivery")} :"),
+                      Text("${S.of(context).translate("orderCost")} :"),
+                      Text("${S.of(context).translate("ordernum")} :"),
                     ],
                   ),
                 ),
@@ -65,7 +66,7 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin{
             ),
                   child: Center(
                     child: Container(
-                      width: 100,
+                      width: 120,
                         height: 40,
                         alignment: FractionalOffset.center,
                         decoration: BoxDecoration(
@@ -73,7 +74,7 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin{
                             borderRadius: BorderRadius.all(const Radius.circular(25.0)),
                         ),
                         child: Text(
-                          "قبول الطلب",
+                         S.of(context).translate("RequestAccept"),
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.0,
@@ -93,7 +94,7 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin{
                   ),
                   child: Center(
                     child: Container(
-                      width: 100,
+                      width: 120,
                         height: 40,
                         alignment: FractionalOffset.center,
                         decoration: BoxDecoration(
@@ -102,7 +103,7 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin{
 
                         ),
                         child: Text(
-                          "رفض الطلب",
+                          S.of(context).translate("Rejection"),
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16.0,
@@ -132,7 +133,7 @@ class _OrderCardState extends State<OrderCard> with TickerProviderStateMixin{
                         border: Border.all(color: Colors.green.shade200)
                     ),
                     child: Text(
-                      "تفاصيل الطلب",
+                      S.of(context).translate("orderdetails"),
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 16.0,

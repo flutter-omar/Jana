@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:janaapp/generated/i18n.dart';
 
 
 class UserCard extends StatefulWidget {
@@ -33,8 +34,8 @@ class _UserCardState extends State<UserCard> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("الاسم"),
-                  Text("رقم العضوية"),
+                  Text("اسم العضو"),
+                  Text("${S.of(context).translate("MembershipNo")} :#"),
                 ],
               ),
             ),

@@ -27,7 +27,7 @@ class _PersonalPageState extends State<PersonalPage> {
       appBar: AppBar(
         title: Center(
             child: Text(
-          "صفحتي الشخصية",
+              S.of(context).translate("personal"),
           style: TextStyle(color: Colors.black),
         )),
         leading: IconButton(
@@ -55,7 +55,7 @@ class _PersonalPageState extends State<PersonalPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
 
-                          Text("الحالة"),
+                          Text(S.of(context).translate("status")),
                           SizedBox(
                             height: 5,
                           ),
@@ -71,13 +71,13 @@ class _PersonalPageState extends State<PersonalPage> {
                                 });
                               },
                               activeColor: Colors.green.shade200,
-                              title: Text("مستعد لإستقبال الطلبات",),
+                              title: Text(S.of(context).translate("ready"),),
                             ),
                           ),
                           SizedBox(
                             height: 5,
                           ),
-                          Text("الطلبات"),
+                          Text(S.of(context).translate("orders")),
                           SizedBox(
                             height: 5,
                           ),
@@ -88,7 +88,7 @@ class _PersonalPageState extends State<PersonalPage> {
                                 children: <Widget>[
                                   ListTile(
                                     onTap: () => {},
-                                    title: Text("مجموع مبالغ التوصيل",
+                                    title: Text(S.of(context).translate("deliverysum"),
                                         style: TextStyle(fontSize: 16)),
                                     trailing: Text(
                                       "600 ريال",
@@ -99,20 +99,20 @@ class _PersonalPageState extends State<PersonalPage> {
                                   Divider(),
                                   ListTile(
                                       onTap: () => {},
-                                      title: Text("أرباحي",
+                                      title: Text(S.of(context).translate("earnings"),
                                           style: TextStyle(fontSize: 16)),
                                       trailing: Text(
-                                        "5",
+                                        " 30 ريال",
                                         style: TextStyle(
                                             fontSize: 18, color: Colors.black),
                                       )),
                                   Divider(),
                                   ListTile(
                                     onTap: () => {},
-                                    title: Text("الطلبات التي تم توصيلها",
+                                    title: Text(S.of(context).translate("orderdelivered"),
                                         style: TextStyle(fontSize: 16)),
                                     trailing: Text(
-                                      "30 ريال",
+                                      "5",
                                       style: TextStyle(
                                           fontSize: 18, color: Colors.black),
                                     ),
@@ -120,7 +120,7 @@ class _PersonalPageState extends State<PersonalPage> {
                                   Divider(),
                                   ListTile(
                                       onTap: () => {},
-                                      title: Text("الطلبات التي تم الغائها",
+                                      title: Text(S.of(context).translate("ordercancel"),
                                           style: TextStyle(fontSize: 16)),
                                       trailing: Text(
                                         "2",
@@ -132,7 +132,7 @@ class _PersonalPageState extends State<PersonalPage> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text("تفاصيل الحساب"),
+                          Text(S.of(context).translate("accountdetails")),
                           SizedBox(
                             height: 5,
                           ),
@@ -149,7 +149,7 @@ class _PersonalPageState extends State<PersonalPage> {
                                           builder: (context) => UserProfile(newUser: true,)),
                                     )
                                   },
-                                  title: Text("المعلومات الشخصية",
+                                  title: Text(S.of(context).translate("personalinformation"),
                                       style: TextStyle(fontSize: 16)),
                                   trailing: Icon(
                                     Icons.arrow_forward_ios,
@@ -161,7 +161,7 @@ class _PersonalPageState extends State<PersonalPage> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text("اللغة"),
+                          Text(S.of(context).translate("language")),
                           SizedBox(
                             height: 5,
                           ),
@@ -173,7 +173,7 @@ class _PersonalPageState extends State<PersonalPage> {
                                   onTap: () => {
                                   showLanguagePopup(context, appLanguage),
                                   },
-                                  title: Text("تغيير اللغة",
+                                  title: Text(S.of(context).translate("changelanguage"),
                                       style: TextStyle(fontSize: 16)),
                                   trailing: Icon(
                                     Icons.arrow_forward_ios,
@@ -185,7 +185,7 @@ class _PersonalPageState extends State<PersonalPage> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text("الدعم الفني"),
+                          Text(S.of(context).translate("Technicalsupport")),
                           SizedBox(
                             height: 5,
                           ),
@@ -195,7 +195,7 @@ class _PersonalPageState extends State<PersonalPage> {
                               child: Column(children: <Widget>[
                                 ListTile(
                                   onTap: () => {},
-                                  title: Text("تواصل معنا عبر الواتساب",
+                                  title: Text(S.of(context).translate("whatsup"),
                                       style: TextStyle(fontSize: 16)),
                                   trailing: Icon(
                                     Icons.arrow_forward_ios,
@@ -207,7 +207,7 @@ class _PersonalPageState extends State<PersonalPage> {
                           SizedBox(
                             height: 5,
                           ),
-                          Text("تسجيل الخروج"),
+                          Text(S.of(context).translate("logout")),
                           SizedBox(
                             height: 5,
                           ),
@@ -222,7 +222,7 @@ class _PersonalPageState extends State<PersonalPage> {
 //                                    Provider.of<UserModel>(context, listen: false).logout(),
 
                                   },
-                                  title: Text("تسجيل الحروج",
+                                  title: Text(S.of(context).translate("logout"),
                                       style: TextStyle(
                                           fontSize: 16, color: Colors.red)),
                                   trailing: Icon(

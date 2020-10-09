@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:janaapp/homescreen.dart';
 
+import 'generated/i18n.dart';
 import 'myorder.dart';
 import 'personalpage.dart';
 
@@ -52,17 +53,17 @@ class _TabBarScreenState extends State<TabBarScreen> {
         onTap: (index) => this._onTabChanged(index),
         items: [
            BottomNavigationBarItem(
-              icon:  _buildIcon(Icons.person_outline,"صفحتي الشخصية",0),
+              icon:  _buildIcon(Icons.person_outline,S.of(context).translate("personal"),0),
               title: SizedBox.shrink(),),
           new BottomNavigationBarItem(
               icon: _buildIcon(
                 Icons.home,
-                  "الرئيسية",1
+                  S.of(context).translate("home"),1
               ),
               title:SizedBox.shrink()),
           new BottomNavigationBarItem(
 
-              icon: _buildIcon(Icons.inbox, "طلباتي",2),
+              icon: _buildIcon(Icons.inbox, S.of(context).translate("myorder"),2),
               title: SizedBox.shrink()),
         ],
       ),
