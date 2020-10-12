@@ -106,9 +106,9 @@ class _UserProfileState extends State<UserProfile>
     );
   }
 
-  bool _birthDate = false;
-  bool checkimage=false;
-  bool ckeckIdentityImage=false;
+  bool _birthDate = true;
+  bool checkimage=true;
+  bool ckeckIdentityImage=true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,7 +187,7 @@ class _UserProfileState extends State<UserProfile>
                       ),
                     ),
                     SizedBox(height: 12.0),
-                    Text(checkimage?S.of(context).translate("personalphoto"):S.of(context).translate("choosepersonalphoto")),
+                    Text(checkimage?S.of(context).translate("personalphoto"):S.of(context).translate("choosepersonalphoto"),style: TextStyle(color: checkimage?Colors.black:Colors.red),),
                     SizedBox(height: 12.0),
                     Container(
                       decoration: BoxDecoration(
@@ -259,22 +259,25 @@ class _UserProfileState extends State<UserProfile>
                         child: TextFormField(
                           enabled: false,
                           controller: TextEditingController(
-                            text: _birthDate
+                            text: birthDate != null
                                 ? DateFormat("yyyy/MM/dd").format(
                                     DateTime.parse(birthDate.toIso8601String()),
                                   )
-                                : S.of(context).translate("choosebirthDate"),
+                                : null,
                           ),
-                          style: TextStyle(
-                              color: _birthDate ? Colors.black : Colors.red),
+//                          style: TextStyle(
+//                              color: _birthDate ? Colors.black : Colors.red),
                           cursorColor: Color(0xff78c891),
                           decoration: InputDecoration(
                             focusColor: Color(0xff78c891),
-                            labelText: S.of(context).translate("birthDate"),
+//                            labelText: S.of(context).translate("birthDate"),
                             focusedBorder: InputBorder.none,
                             enabledBorder: InputBorder.none,
                             errorBorder: InputBorder.none,
                             disabledBorder: InputBorder.none,
+                            hintText:_birthDate? S.of(context).translate("birthDate"):S.of(context).translate("choosebirthDate"),
+                            hintStyle: TextStyle(
+                                color: _birthDate ? Colors.black : Colors.red),
                             prefixIcon: Icon(
                               Icons.calendar_today,
                               color: _iconColor,
@@ -338,6 +341,7 @@ class _UserProfileState extends State<UserProfile>
                               Flexible(
                                   child: Text(
                                 ckeckIdentityImage?S.of(context).translate("idphoto"):S.of(context).translate("uploadidphoto"),
+                                      style: TextStyle(color: ckeckIdentityImage?Colors.black:Colors.red),
                               )),
                             ],
                           ),

@@ -29,9 +29,9 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
   String _factoryCAr;
   String _carDate;
 
-  bool _carImage = false;
-  bool _carCardImage = false;
-  bool _carLicenseImage = false;
+  bool _carImage = true;
+  bool _carCardImage = true;
+  bool _carLicenseImage = true;
 
   _imgFromCamera(int name) async {
     File image = await ImagePicker.pickImage(
@@ -398,6 +398,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 hintText: _carImage
                                     ? S.of(context).translate("VehiclePhoto")
                                     : S.of(context).translate("entervehiclephoto"),
+                                hintStyle: TextStyle(color: _carImage?Colors.black:Colors.red),
                                 prefixIcon: Icon(
                                   Icons.image,
                                   color: _iconColor,
@@ -459,6 +460,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 hintText: _carCardImage
                                     ? S.of(context).translate("formphoto")
                                     : S.of(context).translate("enterformphoto"),
+                                hintStyle: TextStyle(color: _carCardImage?Colors.black:Colors.red),
                                 prefixIcon: Icon(
                                   Icons.image,
                                   color: _iconColor,
@@ -520,6 +522,7 @@ class _VehicleState extends State<Vehicle> with TickerProviderStateMixin {
                                 hintText: _carLicenseImage
                                     ? S.of(context).translate("licensephoto")
                                     : S.of(context).translate("enterlicense"),
+                                hintStyle: TextStyle(color: _carLicenseImage?Colors.black:Colors.red),
                                 prefixIcon: Icon(
                                   Icons.image,
                                   color: _iconColor,
